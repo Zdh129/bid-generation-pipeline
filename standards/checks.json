@@ -1,0 +1,1262 @@
+{
+  "standard_version": "1.1.0-v8",
+  "standard_name": "标书排版质量标准",
+  "severity_levels": [
+    "阻断",
+    "重要",
+    "提示"
+  ],
+  "source_labels": {
+    "sample-stats": "真实样本统计",
+    "convention": "工程标书常见规范",
+    "hybrid": "混合（样本 + 规范兼容档）",
+    "generated-output": "生成件高标准（样本不足以代表完整标书）"
+  },
+  "counts": {
+    "total": 57,
+    "阻断": 21,
+    "重要": 26,
+    "提示": 10
+  },
+  "checks": [
+    {
+      "id": "Q-FONT-001",
+      "name": "正文中文字体为宋体或仿宋及等效字体",
+      "category": "字体与字号",
+      "severity": "阻断",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "allowed_east_asia": [
+          "宋体",
+          "SimSun",
+          "NSimSun",
+          "Noto Serif CJK SC",
+          "仿宋",
+          "FangSong",
+          "仿宋_GB2312"
+        ],
+        "ascii_allowed": [
+          "Times New Roman",
+          "Liberation Serif",
+          "Nimbus Roman",
+          "宋体",
+          "SimSun"
+        ]
+      },
+      "rule": "正文中文字体为苹方（V8）或宋体/仿宋及等效（含 Noto Sans/Serif CJK SC）。原规则见历史版本；本条已按 V8 修订。",
+      "detection": {
+        "docx": "读取正文段落 run 的 w:rFonts/@w:eastAsia 与 ascii；样式继承一并解析。未显式设置时回退到 Normal/主题字体。",
+        "pdf": "对正文字号簇的 font 名称做别名归一（如 SimSun、NotoSerifCJKsc-Regular）。"
+      },
+      "source": "v8-reference"
+    },
+    {
+      "id": "Q-FONT-002",
+      "name": "正文字号为四号（14pt）或全文统一的小四（12pt）",
+      "category": "字体与字号",
+      "severity": "阻断",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "primary_pt": 14,
+        "alt_pt": 12,
+        "tolerance_pt": 0.5,
+        "must_be_uniform": true
+      },
+      "rule": "正文字号默认四号 14pt（来源：8 份 Word 样本中，正文按字符数 14pt 约 2501、12pt 约 74，14pt 为明确主峰）。允许全文统一使用小四 12pt（工程标书常见规范及样本次峰）。同一文档不得混用 12 与 14 作为正文。容差 ±0.5pt。",
+      "detection": {
+        "docx": "统计非标题、非题注、非页眉页脚、非表格段落的 run.font.size（含样式默认值），众数须为 14 或 12，且偏离众数超过容差的字符比例 < 5%。",
+        "pdf": "按字号聚类，主体文本簇 size 应在 13.5–14.5 或 11.5–12.5。"
+      },
+      "source": "hybrid"
+    },
+    {
+      "id": "Q-FONT-003",
+      "name": "一级标题为黑体（或等效）三号 16pt 加粗",
+      "category": "字体与字号",
+      "severity": "阻断",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "size_pt": 14,
+        "tolerance_pt": 0.5,
+        "bold": true,
+        "font": "PingFang SC 或等效"
+      },
+      "rule": "一级标题与正文同族 14pt 加粗居中（来源：V8；不再要求黑体三号）。原规则见历史版本；本条已按 V8 修订。",
+      "detection": {
+        "docx": "Heading 1 / 大纲级别 1 / 样式名含「标题 1」的段落，检查 eastAsia 字体、字号、加粗。",
+        "pdf": "用源 JSON 的一级标题文本定位，核对字号与字体别名。"
+      },
+      "source": "v8-reference"
+    },
+    {
+      "id": "Q-FONT-004",
+      "name": "二级标题为黑体四号 14pt 加粗",
+      "category": "字体与字号",
+      "severity": "重要",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "size_pt": 14,
+        "tolerance_pt": 0.5,
+        "bold": true,
+        "font": "PingFang SC 或等效"
+      },
+      "rule": "二级标题与正文同族 14pt 加粗（来源：V8）。原规则见历史版本；本条已按 V8 修订。",
+      "detection": {
+        "docx": "检查 Heading 2 / 大纲级别 2。",
+        "pdf": "用源标题文本定位后核字号。"
+      },
+      "source": "v8-reference"
+    },
+    {
+      "id": "Q-FONT-005",
+      "name": "三级标题为黑体小四 12pt 加粗",
+      "category": "字体与字号",
+      "severity": "重要",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "size_pt": 14,
+        "tolerance_pt": 0.5,
+        "bold": true,
+        "font": "PingFang SC 或等效"
+      },
+      "rule": "三级标题与正文同族 14pt 加粗（来源：V8）。原规则见历史版本；本条已按 V8 修订。",
+      "detection": {
+        "docx": "检查 Heading 3 / 大纲级别 3。",
+        "pdf": "用源标题文本定位后核字号。"
+      },
+      "source": "v8-reference"
+    },
+    {
+      "id": "Q-FONT-006",
+      "name": "四级及以下标题与正文同号、宋体加粗",
+      "category": "字体与字号",
+      "severity": "提示",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "size_matches_body": true,
+        "bold": true
+      },
+      "rule": "level≥4 的标题使用宋体（或正文同族），字号与该文档正文一致，加粗。",
+      "detection": {
+        "docx": "检查 Heading 4–6 的字体与字号。",
+        "pdf": "同左。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-FONT-007",
+      "name": "页眉页脚为宋体小五（9pt）",
+      "category": "字体与字号",
+      "severity": "重要",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "size_pt": 9,
+        "tolerance_pt": 1.0,
+        "font": "宋体/Noto Serif CJK SC"
+      },
+      "rule": "页眉页脚中文使用宋体或等效，9pt（小五），容差 ±1pt。来源：工程标书常见规范。本批样本仅 1/8 含页眉页脚，且为楷体 16pt/12pt，视为个例，不作为阈值。",
+      "detection": {
+        "docx": "遍历节的 header/footer 中带文字的 run。",
+        "pdf": "取页面顶部 8% 与底部 8% 区域文字的 font/size。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-FONT-008",
+      "name": "图题表题为宋体五号 10.5pt 居中",
+      "category": "字体与字号",
+      "severity": "重要",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "size_pt": 10.5,
+        "tolerance_pt": 0.5,
+        "alignment": "center",
+        "table_cell_size_range_pt": [
+          9.0,
+          12.0
+        ]
+      },
+      "rule": "图题表题字号允许 14pt（V8）或五号 10.5pt，宜居中。原规则见历史版本；本条已按 V8 修订。",
+      "detection": {
+        "docx": "Caption / 题注 / 图题表题样式及表格单元格 run 字号；题注对齐为 center。",
+        "pdf": "图/表邻近居中短行的字号。"
+      },
+      "source": "v8-reference"
+    },
+    {
+      "id": "Q-FONT-009",
+      "name": "不得使用白名单以外的装饰字体作为正文或标题",
+      "category": "字体与字号",
+      "severity": "重要",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "whitelist_note": "宋体/仿宋/黑体/楷体/微软雅黑及其等效，西文 Times/Liberation Serif/Calibri/Arial/Courier。苹方、汉仪装饰字体等不得作为标题或正文主字体。"
+      },
+      "rule": "白名单包含苹方（V8 主字体），不得使用白名单以外装饰字体。原规则见历史版本；本条已按 V8 修订。",
+      "detection": {
+        "docx": "汇总正文与标题 eastAsia/ascii 字体，对不在白名单的给出命中位置。",
+        "pdf": "同上，做别名归一。"
+      },
+      "source": "v8-reference"
+    },
+    {
+      "id": "Q-FONT-010",
+      "name": "同一段落中文字体族一致",
+      "category": "字体与字号",
+      "severity": "提示",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "max_cjk_families_per_paragraph": 1
+      },
+      "rule": "同一段落内中文不得混用两套及以上字体族（西文与中文搭配除外）。",
+      "detection": {
+        "docx": "按段落统计 eastAsia 字体种类。",
+        "pdf": "按垂直邻近行分组后统计。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-HEAD-001",
+      "name": "标题层级连续，不得跳级",
+      "category": "标题层级",
+      "severity": "阻断",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "no_skip": true,
+        "example": "不允许 1 级后直接 3 级"
+      },
+      "rule": "按阅读顺序，后一个标题的 level 不得大于前一个标题 level+1。文档不得以 level≥2 作为第一个标题。",
+      "detection": {
+        "docx": "按文档顺序收集大纲级别/Heading N，检查相邻差。",
+        "json": "对中间格式 heading 块按 reading_order 检查 level。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-HEAD-002",
+      "name": "文档须有文题（title）",
+      "category": "标题层级",
+      "severity": "重要",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "min_title_blocks": 1
+      },
+      "rule": "完整标书应有 type=title 的文题，或开头一个居中、字号≥小二（18pt）的标题。本批 Word 样本多为短页/表格件，不以「样本无文题」放宽完整标书要求。",
+      "detection": {
+        "docx": "检查 Title 样式或首段大号居中加粗短文本。",
+        "json": "存在 type=title，或首个可见块为居中大标题。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-HEAD-003",
+      "name": "标题编号与层级一致且同级连续",
+      "category": "标题层级",
+      "severity": "重要",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "patterns": [
+          "第X章",
+          "X.X",
+          "X.X.X"
+        ]
+      },
+      "rule": "若标题带编号，则「第X章/X」对应 level 1，「X.X」对应 level 2，以此类推；同级序号单调递增且不跳号。无编号标题不判失败。",
+      "detection": {
+        "docx": "用正则提取标题编号，与样式级别对照。",
+        "json": "对 heading.text 做同样检查。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-HEAD-004",
+      "name": "标题文本非空且无异常控制字符",
+      "category": "标题层级",
+      "severity": "提示",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "min_chars": 1,
+        "forbid_chars": [
+          "\\x00",
+          "\\ufffd"
+        ]
+      },
+      "rule": "标题去掉空白后长度≥1，不含空字符或替换符。",
+      "detection": {
+        "docx": "检查标题段落可见文本。",
+        "json": "检查 heading/title 的 text。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-HF-001",
+      "name": "正文页均有页眉",
+      "category": "页眉页脚",
+      "severity": "提示",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "required_on_body_pages": true,
+        "cover_optional": true
+      },
+      "rule": "页眉非必须（V8 无页眉）；若存在则应规则一致。原规则见历史版本；本条已按 V8 修订。",
+      "detection": {
+        "docx": "检查节 header 是否存在可见内容；首页若为封面可为空。",
+        "pdf": "除封面外每页顶部区域存在重复性短文本或页眉线。"
+      },
+      "source": "v8-reference"
+    },
+    {
+      "id": "Q-HF-002",
+      "name": "页眉内容规则一致",
+      "category": "页眉页脚",
+      "severity": "重要",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "allow_odd_even_pair": true
+      },
+      "rule": "全文页眉文本一致，或奇偶页成对规则一致，不得从某页起改用另一套无关页眉。",
+      "detection": {
+        "docx": "比较各节 header 文本（测试日志只记录是否一致，不输出页眉原文）。",
+        "pdf": "比较各页页眉区域文本归一化结果是否同一或奇偶交替。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-HF-003",
+      "name": "页眉页脚不与正文重叠",
+      "category": "页眉页脚",
+      "severity": "阻断",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "min_gap_mm": 4
+      },
+      "rule": "正文块与页眉、页脚之间的垂直间距 ≥ 4mm。",
+      "detection": {
+        "pdf": "计算页眉/页脚文字 bbox 与正文 bbox 的垂直间隙。",
+        "docx": "检查页边距与 header_distance/footer_distance，辅助判断。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-HF-004",
+      "name": "正文页页脚含页码",
+      "category": "页眉页脚",
+      "severity": "阻断",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "page_field_or_visible_number": true
+      },
+      "rule": "正文页页脚须含页码（PAGE 域或可见页码）。样本 0/8 含 PAGE 域，该条约束生成输出。",
+      "detection": {
+        "docx": "页脚 XML 含 PAGE 域或页码元素。",
+        "pdf": "各正文页底部可解析出页码数字。"
+      },
+      "source": "generated-output"
+    },
+    {
+      "id": "Q-TOC-001",
+      "name": "目录条目文本与正文标题一致",
+      "category": "目录",
+      "severity": "阻断",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "normalize_whitespace": true,
+        "scope_levels": [
+          1,
+          2,
+          3
+        ]
+      },
+      "rule": "目录中列出的标题文本经空白/编号归一后，须与正文对应标题一致。当文档标题数≥3 时，生成件必须包含目录。样本 Word 均无 TOC 域（短文档），不以样本缺失放宽完整标书要求。",
+      "detection": {
+        "docx": "解析目录段落或 TOC 域结果，与 Heading 文本比对。",
+        "pdf": "定位「目录」节，解析条目，与全文标题搜索结果比对。测试日志只记录匹配率，不摘录可能含业务名称的标题原文到对外汇报。"
+      },
+      "source": "generated-output"
+    },
+    {
+      "id": "Q-TOC-002",
+      "name": "目录页码与正文标题实际页码一致",
+      "category": "目录",
+      "severity": "阻断",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "page_number_must_match": true
+      },
+      "rule": "目录中每个条目的页码必须等于该标题在成品 PDF 中的实际页码。",
+      "detection": {
+        "pdf": "用标题文本搜索页码，与目录右侧页码比较。",
+        "docx": "TOC 域更新后的页码；本原型采用「先转 PDF 再回写目录」的两遍流程后检查。"
+      },
+      "source": "generated-output"
+    },
+    {
+      "id": "Q-TOC-003",
+      "name": "目录覆盖正文检查范围内的全部标题",
+      "category": "目录",
+      "severity": "重要",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "default_max_level": 3
+      },
+      "rule": "默认覆盖 1–3 级标题，不得遗漏。若文档标题少于 3 个且无目录，记为提示而非本项失败（由测试用例 expected 声明）。",
+      "detection": {
+        "pdf": "集合差：正文标题 − 目录条目。",
+        "docx": "同左。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-TOC-004",
+      "name": "目录无重复、无幽灵条目",
+      "category": "目录",
+      "severity": "重要",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "no_duplicates": true,
+        "no_orphan_entries": true
+      },
+      "rule": "目录不得重复同一标题+页码，也不得出现正文中不存在的条目。",
+      "detection": {
+        "pdf": "条目集合与标题集合双向差。",
+        "docx": "同左。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-TOC-005",
+      "name": "目录页有「目录」标题",
+      "category": "目录",
+      "severity": "提示",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "title_text": "目录"
+      },
+      "rule": "目录起始处应有「目录」字样标题。",
+      "detection": {
+        "docx": "查找该段落。",
+        "pdf": "首页或目录页搜索「目录」。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-TBL-001",
+      "name": "表格具有可见边框且线宽 ≥ 0.5pt",
+      "category": "表格",
+      "severity": "阻断",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "min_border_pt": 0.25
+      },
+      "rule": "可见边框，线宽 ≥0.25pt（V8 为 sz=2）。原规则见历史版本；本条已按 V8 修订。",
+      "detection": {
+        "docx": "读取 tblBorders 或单元格 tcBorders 的 w:val 与 w:sz（sz 单位为 1/8 磅，4=0.5pt）。样式引用的表格需展开。",
+        "pdf": "检测表格线或使用 find_tables 后检查边框描边宽度。"
+      },
+      "source": "v8-reference"
+    },
+    {
+      "id": "Q-TBL-002",
+      "name": "跨页表格在后续页重复表头",
+      "category": "表格",
+      "severity": "重要",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "header_row_repeat": true
+      },
+      "rule": "只要表格跨页，表头行必须在后续页顶部重复。docx 须设置 w:tblHeader。样本 6 个含表文档中仅 2 个设置了表头重复，生成件必须设置。",
+      "detection": {
+        "docx": "表头行 trPr 含 tblHeader。",
+        "pdf": "对跨页表，后页首行文本与首页表头行一致。"
+      },
+      "source": "hybrid"
+    },
+    {
+      "id": "Q-TBL-003",
+      "name": "跨页时不得从单元格中部裁切",
+      "category": "表格",
+      "severity": "重要",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "row_cant_split": true
+      },
+      "rule": "分页须落在行边界。docx 应对表行设置 cantSplit（或等效）。",
+      "detection": {
+        "docx": "检查 trPr/w:cantSplit。",
+        "pdf": "检查是否有表行文本被页边裁切（字符 bbox 贴住页面内容区底边且被截断）。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-TBL-004",
+      "name": "表头单元格居中，表体对齐一致",
+      "category": "表格",
+      "severity": "提示",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "header_align": "center",
+        "header_valign": "middle"
+      },
+      "rule": "表头水平垂直居中。表体对齐在同一列内应一致。样本表体常见居中或两端对齐。",
+      "detection": {
+        "docx": "读单元格段落 w:jc 与 tcVAlign。",
+        "pdf": "按列统计文本对齐。"
+      },
+      "source": "hybrid"
+    },
+    {
+      "id": "Q-TBL-005",
+      "name": "表题位于表格上方且格式规范",
+      "category": "表格",
+      "severity": "重要",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "pattern": "表\\s*[0-9一二三四五六七八九十]+[-－.、]?[0-9]*\\s*.+",
+        "position": "above"
+      },
+      "rule": "表题在表上方，推荐格式「表」+编号+标题，宋体五号居中。",
+      "detection": {
+        "docx": "表格前一非空段落是否匹配表题模式。",
+        "pdf": "表格 bbox 上方邻近文本。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-TBL-006",
+      "name": "表格不超出版心",
+      "category": "表格",
+      "severity": "阻断",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "max_overflow_pt": 1.0
+      },
+      "rule": "表格左右边缘不得超过正文区（页边距内侧）1pt。",
+      "detection": {
+        "docx": "表宽与左右缩进对比节的内容宽度。",
+        "pdf": "表格/其线框 bbox 与版心矩形比较。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-TBL-007",
+      "name": "合并单元格 rowspan/colspan 合法",
+      "category": "表格",
+      "severity": "阻断",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "no_overlap": true,
+        "in_bounds": true
+      },
+      "rule": "锚点单元格的 row+rowspan、col+colspan 不得越出 n_rows/n_cols；合并区域不得重叠。被覆盖格不得再定义。样本 1/8 文档含合并单元格，生成本项必须可正确往返。",
+      "detection": {
+        "json": "对中间格式 table.cells 做网格占用检查。",
+        "docx": "检查 gridSpan/vMerge 与网格一致性。"
+      },
+      "source": "hybrid"
+    },
+    {
+      "id": "Q-TBL-008",
+      "name": "全文表格框线风格一致",
+      "category": "表格",
+      "severity": "提示",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "consistent_border_style": true
+      },
+      "rule": "同一文档内表格边框风格（全框线或三线表）应一致，不混用明显不同的线宽体系。",
+      "detection": {
+        "docx": "比较各表 tblBorders 的 val/sz。",
+        "pdf": "比较边框可见性与线宽。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-IMG-001",
+      "name": "插入图片有效分辨率 ≥ 300 DPI 等效",
+      "category": "图片",
+      "severity": "提示",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "min_dpi": 60,
+        "recommended_dpi": 300
+      },
+      "rule": "有效 DPI ≥60 为通过下限（覆盖 V8 最低 65.1）；推荐 300，低于 300 不阻断。原规则见历史版本；本条已按 V8 修订。",
+      "detection": {
+        "pdf": "用 PyMuPDF 取图像像素尺寸与放置 rect，计算 dpi_x/dpi_y。",
+        "docx": "用图片 cx/cy（EMU）与资源宽高像素计算。"
+      },
+      "source": "v8-reference"
+    },
+    {
+      "id": "Q-IMG-002",
+      "name": "图片在版心内水平居中（偏差 ≤ 2mm）",
+      "category": "图片",
+      "severity": "重要",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "max_center_offset_mm": 2.0
+      },
+      "rule": "图片左右边到版心左右边的距离之差的绝对值 ≤ 2mm，或明确的左/右对齐且缩进对称规则一致。",
+      "detection": {
+        "pdf": "比较图像 rect 中心与版心中心的水平偏差。",
+        "docx": "检查段落对齐为 center，或浮动图的水平位置。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-IMG-003",
+      "name": "图片及题注不超出版心",
+      "category": "图片",
+      "severity": "阻断",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "max_overflow_pt": 1.0
+      },
+      "rule": "图片与其题注的 bbox 不得超出正文区 1pt。",
+      "detection": {
+        "pdf": "图像与邻近题注 bbox 对照版心。",
+        "docx": "图片宽度 ≤ 节内容宽度。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-IMG-004",
+      "name": "图题位于图下方且格式规范",
+      "category": "图片",
+      "severity": "重要",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "pattern": "图\\s*[0-9一二三四五六七八九十]+[-－.、]?[0-9]*\\s*.+",
+        "position": "below"
+      },
+      "rule": "图题在图下方，推荐「图」+编号+标题。印章、签名类图片不强制题注。",
+      "detection": {
+        "docx": "图片段落后一非空段落是否匹配图题。",
+        "pdf": "图像 bbox 下方邻近文本。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-IMG-005",
+      "name": "图片显示宽度不超过版心",
+      "category": "图片",
+      "severity": "重要",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "max_width": "content_width"
+      },
+      "rule": "图片显示宽度 ≤ 版心宽度。超宽图应等比缩小。",
+      "detection": {
+        "docx": "inline/anchor 宽度与内容区宽度比较。",
+        "pdf": "图像 rect 宽度。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-IMG-006",
+      "name": "印章不得完全遮挡正文关键文字",
+      "category": "图片",
+      "severity": "重要",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "max_text_iou": 0.5,
+        "signature_area_exempt": true
+      },
+      "rule": "seal 与正文文本 bbox 的 IoU 若过高且不在署名区，记为重要问题。署名/盖章区允许重叠。",
+      "detection": {
+        "pdf": "计算印章图像 rect 与文本块相交比例。",
+        "docx": "若为浮动图，用锚点与环绕方式近似判断。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-PGN-001",
+      "name": "页码连续，无跳号、无重复",
+      "category": "页码",
+      "severity": "阻断",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "strictly_increasing_by_1": true
+      },
+      "rule": "可见页码序列须连续递增、无重复、无跳号。封面可不显示页码，正文从 1 起编。",
+      "detection": {
+        "pdf": "从每页页脚区域解析数字，检查序列。",
+        "docx": "检查节的起始页码与 PAGE 域设置。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-PGN-002",
+      "name": "页码格式全文统一",
+      "category": "页码",
+      "severity": "重要",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "allowed_patterns": [
+          "— N —",
+          "- N -",
+          "第 N 页"
+        ]
+      },
+      "rule": "全文页码格式一致。本标准推荐「— N —」。",
+      "detection": {
+        "pdf": "用正则抽取页脚页码样式并比较。",
+        "docx": "页脚域前后缀文本比较（日志不输出可能含单位名称的其它页脚文字）。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-PGN-003",
+      "name": "页码起始规则正确",
+      "category": "页码",
+      "severity": "重要",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "cover_may_hide": true,
+        "body_starts_at": 1
+      },
+      "rule": "若有封面，封面可不显示或单独编号；正文页码从 1 开始。本原型默认全文从 1 连续编号时，只要可见序列自洽即通过。",
+      "detection": {
+        "pdf": "结合是否存在封面节检查第一个可见页码。",
+        "docx": "节起始页码与首页不同页眉设置。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-PGN-004",
+      "name": "页码位置在下边距内且水平居中或外侧",
+      "category": "页码",
+      "severity": "提示",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "min_distance_from_edge_mm": 10,
+        "horizontal": [
+          "center",
+          "outside"
+        ]
+      },
+      "rule": "页码位于版心之下、下边距之内，距纸边 ≥ 10mm，水平居中（推荐）或外侧。",
+      "detection": {
+        "pdf": "页码文本 bbox 的位置。",
+        "docx": "页脚段落对齐。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-MRG-001",
+      "name": "上边距 2.54cm ±1.5mm",
+      "category": "页边距",
+      "severity": "阻断",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "value_cm": 2.54,
+        "tolerance_cm": 0.15
+      },
+      "rule": "上边距在 1.50–3.30cm 内（覆盖 V8 全部节）。原规则见历史版本；本条已按 V8 修订。",
+      "detection": {
+        "docx": "section.top_margin。",
+        "pdf": "页面尺寸辅助核验；以 docx 节属性为准。"
+      },
+      "source": "v8-reference"
+    },
+    {
+      "id": "Q-MRG-002",
+      "name": "下边距 2.54cm ±1.5mm",
+      "category": "页边距",
+      "severity": "阻断",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "value_cm": 2.54,
+        "tolerance_cm": 0.15
+      },
+      "rule": "下边距 2.54cm，容差 ±1.5mm。来源：样本中位数 2.54cm。样本中 2 份下边距为 0，视为缺陷，不纳入合格范围。",
+      "detection": {
+        "docx": "section.bottom_margin。",
+        "pdf": "同 Q-MRG-001。"
+      },
+      "source": "sample-stats"
+    },
+    {
+      "id": "Q-MRG-003",
+      "name": "左边距 3.17cm ±1.5mm（允许 2.54cm 兼容档）",
+      "category": "页边距",
+      "severity": "阻断",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "primary_cm": 3.17,
+        "alt_cm": 2.54,
+        "tolerance_cm": 0.15
+      },
+      "rule": "左边距默认 3.17cm（来源：样本中位数 3.175cm，6/8 文档为 3.175–3.18cm）。允许 2.54cm 作为常见模板兼容档。容差 ±1.5mm。样本中 1.954cm 等过窄值不合格。",
+      "detection": {
+        "docx": "section.left_margin。",
+        "pdf": "同 Q-MRG-001。"
+      },
+      "source": "hybrid"
+    },
+    {
+      "id": "Q-MRG-004",
+      "name": "右边距 3.17cm ±1.5mm（允许 2.54cm 兼容档）",
+      "category": "页边距",
+      "severity": "阻断",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "primary_cm": 3.17,
+        "alt_cm": 2.54,
+        "tolerance_cm": 0.15
+      },
+      "rule": "右边距规则与左边距相同。样本中位数 3.175cm；1.379cm 等过窄值不合格。",
+      "detection": {
+        "docx": "section.right_margin。",
+        "pdf": "同 Q-MRG-001。"
+      },
+      "source": "hybrid"
+    },
+    {
+      "id": "Q-MRG-005",
+      "name": "除封面外全文页边距一致",
+      "category": "页边距",
+      "severity": "重要",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "consistent_except_cover": true
+      },
+      "rule": "除封面节外，各节四周边距须一致（在容差内）。",
+      "detection": {
+        "docx": "比较各节 margins。",
+        "pdf": "比较各页内容区。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-MRG-006",
+      "name": "成品页面为 A4（210×297mm）±1mm",
+      "category": "页边距",
+      "severity": "阻断",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "width_mm": 210,
+        "height_mm": 297,
+        "tolerance_mm": 1.0,
+        "allow_landscape_a4": false
+      },
+      "rule": "A4 210×297mm，允许横向节（V8）。原规则见历史版本；本条已按 V8 修订。",
+      "detection": {
+        "docx": "section.page_width/height。",
+        "pdf": "page.rect 转 mm。"
+      },
+      "source": "v8-reference"
+    },
+    {
+      "id": "Q-SPC-001",
+      "name": "正文行距为固定 25 磅，或兼容的 28 磅 / 1.5 倍",
+      "category": "行距与缩进",
+      "severity": "阻断",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "primary_exact_pt": 25,
+        "alt_exact_pt": 28,
+        "alt_multiple": 1.5,
+        "tol_pt": 1.0,
+        "tol_multiple": 0.1
+      },
+      "rule": "行距允许固定 17/18/20/25/28 磅或 1.0/1.2/1.5 倍（V8 主峰 20 磅）。原规则见历史版本；本条已按 V8 修订。",
+      "detection": {
+        "docx": "读取 w:spacing 的 line/lineRule（exact 的 line 单位为 twip，500=25pt；auto 时 240=1 倍）。",
+        "pdf": "对正文相邻行基线间距取中位数作辅助，以 docx 为准。"
+      },
+      "source": "v8-reference"
+    },
+    {
+      "id": "Q-SPC-002",
+      "name": "正文首行缩进 2 个汉字",
+      "category": "行距与缩进",
+      "severity": "重要",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "chars": 2,
+        "tolerance_pt": 1.5,
+        "formula": "2 * body_size_pt"
+      },
+      "rule": "首行缩进允许 0（V8）或 2 个汉字。原规则见历史版本；本条已按 V8 修订。",
+      "detection": {
+        "docx": "w:ind 的 firstLine（twip）或 firstLineChars。",
+        "pdf": "段落首行 x0 相对后续行的偏移。"
+      },
+      "source": "v8-reference"
+    },
+    {
+      "id": "Q-SPC-003",
+      "name": "标题段前段后间距符合规范",
+      "category": "行距与缩进",
+      "severity": "提示",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "h1": {
+          "before": 12,
+          "after": 6
+        },
+        "h2_h3": {
+          "before": 6,
+          "after": 3
+        },
+        "tolerance_pt": 2
+      },
+      "rule": "一级标题段前 12pt、段后 6pt；二、三级段前 6pt、段后 3pt，容差 ±2pt。来源：规范。样本标题样式不足以为据。",
+      "detection": {
+        "docx": "标题段落 spacing before/after。",
+        "pdf": "辅助测相邻块间隙。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-SPC-004",
+      "name": "正文段落两端对齐",
+      "category": "行距与缩进",
+      "severity": "重要",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "alignment": "both/justify"
+      },
+      "rule": "正文左对齐或两端对齐均可（V8 以左对齐为主）。原规则见历史版本；本条已按 V8 修订。",
+      "detection": {
+        "docx": "正文段落 w:jc=both。",
+        "pdf": "行左右端与版心的贴边情况辅助判断。"
+      },
+      "source": "v8-reference"
+    },
+    {
+      "id": "Q-PAG-001",
+      "name": "无孤行（段末单行落在页首）",
+      "category": "分页与空白",
+      "severity": "重要",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "widow_lines": 1
+      },
+      "rule": "不允许段落的最后一行单独出现在下一页页首。",
+      "detection": {
+        "docx": "检查文档/段落 widowControl（应为开启）。",
+        "pdf": "重建段落在页边界的行分布（尽力而为，不确定时不升为阻断）。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-PAG-002",
+      "name": "无寡行（段首单行落在页末）",
+      "category": "分页与空白",
+      "severity": "重要",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "orphan_lines": 1
+      },
+      "rule": "不允许段落的第一行单独出现在页末。",
+      "detection": {
+        "docx": "同 Q-PAG-001，widowControl 同时约束寡行。",
+        "pdf": "同 Q-PAG-001。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-PAG-003",
+      "name": "无空白页",
+      "category": "分页与空白",
+      "severity": "阻断",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "max_ink_ratio": 0.003,
+        "exempt": [
+          "cover",
+          "intentional_separator"
+        ]
+      },
+      "rule": "成品不得出现空白页。判定：页面文字+图像像素占比 < 0.3%，且无表格。有意分隔页须在用例中声明豁免。",
+      "detection": {
+        "pdf": "渲染灰度页，统计低于阈值的墨迹比例，并检查文本/图像/矢量对象。",
+        "docx": "不能可靠发现完全空白页，以 PDF 为准。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-PAG-004",
+      "name": "标题不得孤立出现在页末",
+      "category": "分页与空白",
+      "severity": "重要",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "min_following_lines": 2
+      },
+      "rule": "标题后在同一页至少还有 2 行正文或一个表格/图片，不得把标题留在页底。",
+      "detection": {
+        "pdf": "检查标题块下方至页底是否还有足够内容。",
+        "docx": "可设置 keep-with-next；作为辅助。"
+      },
+      "source": "convention"
+    },
+    {
+      "id": "Q-SKW-001",
+      "name": "文档类扫描件或扫描图像倾斜角 |θ| ≤ 0.5°",
+      "category": "扫描纠偏",
+      "severity": "阻断",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "max_abs_deg": 0.5,
+        "unreliable_abs_deg": 7.5,
+        "applies_to": [
+          "asset.type=scan",
+          "block.type=image 且来源为扫描"
+        ]
+      },
+      "rule": "文档类扫描件（含嵌入的扫描图像）倾斜角绝对值 ≤ 0.5°。来源：70 个 A4 近似扫描页中，69 页估计 |θ|≤0.4°，中位数 0.0°。若估计值落在搜索边界（约 ±8°）则标记为不可靠，不得直接判失败。非文本照片页的投影法估计不可靠，本项不适用（或只提示）。印章不检测此项。",
+      "detection": {
+        "pdf": "对扫描图像或整页渲染做投影剖面（角度搜索），得到 θ。实现须处理不可靠标记。",
+        "asset": "也可对源 assets 中 type=scan 的图像在嵌入前检测。"
+      },
+      "source": "sample-stats"
+    },
+    {
+      "id": "Q-SKW-002",
+      "name": "整页正文基线倾斜角 |θ| ≤ 0.3°",
+      "category": "扫描纠偏",
+      "severity": "重要",
+      "automatable": true,
+      "applies_to": [
+        "docx",
+        "pdf"
+      ],
+      "threshold": {
+        "max_abs_deg": 0.3
+      },
+      "rule": "数字生成页或已矢量化正文的基线倾斜应 ≤ 0.3°。用于防止整页被旋转放置。",
+      "detection": {
+        "pdf": "对文字行基线或整页投影估计倾斜。生成件通常为 0°。"
+      },
+      "source": "convention"
+    }
+  ],
+  "revision_note": "已按 V8 参考成品修订，详见 layout-quality-standard-v8-addendum.md 目录 counts 已与条目实际严重级别对齐：阻断 21、重要 26、提示 10（含将 Q-IMG-001、Q-HF-001 等调整为提示以避免 V8 误报）。"
+}

@@ -1,0 +1,68 @@
+{
+  "comment": "虚构的招标参数摘录，仅供示例。",
+  "project_code": "EXAM-ZB-20260001",
+  "addressee": "示例招标人有限公司",
+  "counts": {
+    "devices": 3,
+    "tech_params": 7,
+    "star_params": 2
+  },
+  "params": [
+    {
+      "id": "P01-1",
+      "device_seq": 1,
+      "device": "示例设备01",
+      "param_n": 1,
+      "star": false,
+      "req_text": "用途：用于示例检测。"
+    },
+    {
+      "id": "P01-2",
+      "device_seq": 1,
+      "device": "示例设备01",
+      "param_n": 2,
+      "star": true,
+      "req_text": "★最大量程：≥100 单位。"
+    },
+    {
+      "id": "P01-3",
+      "device_seq": 1,
+      "device": "示例设备01",
+      "param_n": 3,
+      "star": false,
+      "req_text": "设计有示例手动阀。"
+    },
+    {
+      "id": "P02-1",
+      "device_seq": 2,
+      "device": "示例设备02",
+      "param_n": 1,
+      "star": false,
+      "req_text": "压缩机型式：示例A型压缩机。"
+    },
+    {
+      "id": "P02-2",
+      "device_seq": 2,
+      "device": "示例设备02",
+      "param_n": 2,
+      "star": false,
+      "req_text": "最大示例压力：＞100 单位。"
+    },
+    {
+      "id": "P03-1",
+      "device_seq": 3,
+      "device": "示例设备03",
+      "param_n": 1,
+      "star": true,
+      "req_text": "★示例强度:0-1,000 六级可调。"
+    },
+    {
+      "id": "P03-2",
+      "device_seq": 3,
+      "device": "示例设备03",
+      "param_n": 2,
+      "star": false,
+      "req_text": "主机 1 台。"
+    }
+  ]
+}

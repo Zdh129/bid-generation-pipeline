@@ -1,0 +1,71 @@
+[
+  {
+    "seq": 1,
+    "name": "示例设备01",
+    "page_start": 1,
+    "n_params": 3,
+    "n_star": 1,
+    "params": [
+      {
+        "n": 1,
+        "index": 1,
+        "star": false,
+        "text": "用途：用于示例检测。"
+      },
+      {
+        "n": 2,
+        "index": 2,
+        "star": true,
+        "text": "★最大量程：≥100 单位。"
+      },
+      {
+        "n": 3,
+        "index": 3,
+        "star": false,
+        "text": "设计有示例手动阀。"
+      }
+    ]
+  },
+  {
+    "seq": 2,
+    "name": "示例设备02",
+    "page_start": 2,
+    "n_params": 2,
+    "n_star": 0,
+    "params": [
+      {
+        "n": 1,
+        "index": 1,
+        "star": false,
+        "text": "压缩机型式：示例A型压缩机。"
+      },
+      {
+        "n": 2,
+        "index": 2,
+        "star": false,
+        "text": "最大示例压力：＞100 单位。"
+      }
+    ]
+  },
+  {
+    "seq": 3,
+    "name": "示例设备03",
+    "page_start": 3,
+    "n_params": 2,
+    "n_star": 1,
+    "params": [
+      {
+        "n": 1,
+        "index": 1,
+        "star": true,
+        "text": "★示例强度:0-1,000 六级可调。"
+      },
+      {
+        "n": 2,
+        "index": 2,
+        "star": false,
+        "text": "主机 1 台。"
+      }
+    ]
+  }
+]

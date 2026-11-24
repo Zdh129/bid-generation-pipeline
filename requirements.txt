@@ -1,0 +1,15 @@
+# 核心：中间格式校验、生成 DOCX、57 项版式检查（DOCX）
+jsonschema==4.26.0
+python-docx==1.2.0
+pymupdf==2.1
+pillow==13.0.0
+numpy==2.5.5
+lxml==6.1.3
+
+# PDF 检查、原图回写（完整流水线；仅检查 DOCX 时可不装）
+pypdfium2
+pikepdf
+
+# 本机离线 OCR（RapidOCR / ONNX）。只下载模型权重，不上传数据。
+# 示例「生成 docx → 57 项检查」不强制。
+# rapidocr-onnxruntime

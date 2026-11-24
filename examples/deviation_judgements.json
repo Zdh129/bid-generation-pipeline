@@ -1,0 +1,170 @@
+{
+  "comment": "虚构的偏离判定示例，用于说明叠加层：明确矛盾优先、严格不等号、未提供项不计入。",
+  "n_params": 7,
+  "n_star": 2,
+  "verdict_counts": {
+    "无偏离": 2,
+    "正偏离": 2,
+    "待确认": 1,
+    "负偏离": 2
+  },
+  "v8_compared": 7,
+  "v8_agree": 6,
+  "judgements": [
+    {
+      "id": "P01-1",
+      "device_seq": 1,
+      "device": "示例设备01",
+      "param_n": 1,
+      "star": false,
+      "req_text": "用途：用于示例检测。",
+      "verdict": "无偏离",
+      "reason": "厂家函覆盖该条款，且未见同单位数值差异",
+      "numeric_note": "无足够数值约束",
+      "evidence": [
+        {
+          "source": "example-letter-01.pdf",
+          "page": 1,
+          "quote": "用途：用于示例检测。"
+        }
+      ],
+      "v8_deviation": "无偏离",
+      "v8_raw": "无偏离",
+      "v8_offered": "1 用途：用于示例检测。",
+      "v8_agree": true
+    },
+    {
+      "id": "P01-2",
+      "device_seq": 1,
+      "device": "示例设备01",
+      "param_n": 2,
+      "star": true,
+      "req_text": "★最大量程：≥100 单位。",
+      "verdict": "正偏离",
+      "reason": "投标 120＞招标 100，量程覆盖且更优；★条款允许正偏离",
+      "numeric_note": "120 > 100",
+      "evidence": [
+        {
+          "source": "example-letter-01.pdf",
+          "page": 1,
+          "quote": "最大量程：120 单位"
+        }
+      ],
+      "v8_deviation": "正偏离",
+      "v8_raw": "正偏离",
+      "v8_offered": "最大量程：120 单位",
+      "v8_agree": true
+    },
+    {
+      "id": "P01-3",
+      "device_seq": 1,
+      "device": "示例设备01",
+      "param_n": 3,
+      "star": false,
+      "req_text": "设计有示例手动阀。",
+      "verdict": "待确认",
+      "reason": "对照稿写全自动，厂家函写手动，待人工确认；不属于未提供，计入一致性判定",
+      "numeric_note": "",
+      "evidence": [
+        {
+          "source": "example-letter-01.pdf",
+          "page": 1,
+          "quote": "设计有示例手动阀"
+        }
+      ],
+      "v8_deviation": "正偏离",
+      "v8_raw": "正偏离",
+      "v8_offered": "全自动示例阀",
+      "v8_agree": false
+    },
+    {
+      "id": "P02-1",
+      "device_seq": 2,
+      "device": "示例设备02",
+      "param_n": 1,
+      "star": false,
+      "req_text": "压缩机型式：示例A型压缩机。",
+      "verdict": "负偏离",
+      "reason": "厂家函为示例B型压缩机，型式与要求不同（明确矛盾优先）",
+      "numeric_note": "",
+      "evidence": [
+        {
+          "source": "example-letter-02.pdf",
+          "page": 1,
+          "quote": "示例B型压缩机"
+        }
+      ],
+      "v8_deviation": "负偏离",
+      "v8_raw": "负偏离",
+      "v8_offered": "示例B型压缩机",
+      "v8_agree": true
+    },
+    {
+      "id": "P02-2",
+      "device_seq": 2,
+      "device": "示例设备02",
+      "param_n": 2,
+      "star": false,
+      "req_text": "最大示例压力：＞100 单位。",
+      "verdict": "负偏离",
+      "reason": "厂家函给出的量程单位或数值与招标原文可能不一致，建议向招标人澄清",
+      "numeric_note": "单位待澄清",
+      "evidence": [
+        {
+          "source": "example-letter-02.pdf",
+          "page": 1,
+          "quote": "示例压力：0 - 20（并联）、0 - 25（串联）可调"
+        }
+      ],
+      "v8_deviation": "负偏离",
+      "v8_raw": "负偏离",
+      "v8_offered": "示例压力 0-25",
+      "v8_agree": true
+    },
+    {
+      "id": "P03-1",
+      "device_seq": 3,
+      "device": "示例设备03",
+      "param_n": 1,
+      "star": true,
+      "req_text": "★示例强度:0-1,000 六级可调。",
+      "verdict": "正偏离",
+      "reason": "厂家函 0-1500（100级）覆盖且调节更细；★条款允许正偏离",
+      "numeric_note": "1500 > 1000",
+      "evidence": [
+        {
+          "source": "example-letter-03.pdf",
+          "page": 1,
+          "quote": "★示例强度:0-1500（100级调控）"
+        }
+      ],
+      "v8_deviation": "正偏离",
+      "v8_raw": "正偏离",
+      "v8_offered": "0-1500",
+      "v8_agree": true
+    },
+    {
+      "id": "P03-2",
+      "device_seq": 3,
+      "device": "示例设备03",
+      "param_n": 2,
+      "star": false,
+      "req_text": "主机 1 台。",
+      "verdict": "无偏离",
+      "reason": "〔未提供：厂家参数确认函（本行不计入一致性判定）〕仅有彩页/参数页，结论暂依现有资料",
+      "numeric_note": "",
+      "evidence": [
+        {
+          "source": "example-brochure-03.pdf",
+          "page": 1,
+          "quote": "主机本体参数"
+        }
+      ],
+      "v8_deviation": "无偏离",
+      "v8_raw": "无偏离",
+      "v8_offered": "主机 1 台",
+      "v8_agree": true,
+      "r10_excluded": true
+    }
+  ]
+}

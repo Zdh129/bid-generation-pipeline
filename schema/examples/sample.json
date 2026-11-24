@@ -1,0 +1,380 @@
+{
+  "schema_version": "1.0.0",
+  "data_label": "example",
+  "document": {
+    "source_file": "example-bid-source.pdf",
+    "source_type": "pdf",
+    "title": "示例投标文件（构造数据，非真实项目）",
+    "language": "zh-CN",
+    "page_count": 2,
+    "generated_at": "2026-11-17T12:00:00+08:00",
+    "engine_name": "example-pipeline",
+    "engine_version": "0.0-example",
+    "schema_version": "1.0.0",
+    "render_dpi_default": 300,
+    "notes": "本文件为 schema 示例数据，不是真实识别产出，不含个人信息。"
+  },
+  "coordinate_system": {
+    "origin": "top-left",
+    "x_axis": "rightward",
+    "y_axis": "downward",
+    "default_unit": "pt",
+    "description": "页面左上原点，x 向右、y 向下，默认单位 pt。"
+  },
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 595.28,
+      "height": 841.89,
+      "unit": "pt",
+      "render_dpi": 300,
+      "rotation": 0,
+      "skew_angle_deg": 0
+    },
+    {
+      "page_number": 2,
+      "width": 595.28,
+      "height": 841.89,
+      "unit": "pt",
+      "render_dpi": 300,
+      "rotation": 0,
+      "skew_angle_deg": 0
+    }
+  ],
+  "blocks": [
+    {
+      "id": "b-001-001",
+      "page": 1,
+      "bbox": [
+        72,
+        40,
+        523,
+        64
+      ],
+      "bbox_unit": "pt",
+      "type": "header",
+      "reading_order": 0,
+      "text": "投标文件（示例）",
+      "confidence": 1.0,
+      "source": "rule",
+      "verification_status": "auto_passed"
+    },
+    {
+      "id": "b-001-002",
+      "page": 1,
+      "bbox": [
+        72,
+        80,
+        523,
+        120
+      ],
+      "bbox_unit": "pt",
+      "type": "title",
+      "reading_order": 1,
+      "text": "示例项目投标文件",
+      "confidence": 0.99,
+      "source": "ocr",
+      "verification_status": "unverified",
+      "style": {
+        "font_family": "黑体",
+        "font_size_pt": 18,
+        "bold": true,
+        "alignment": "center"
+      }
+    },
+    {
+      "id": "b-001-003",
+      "page": 1,
+      "bbox": [
+        72,
+        140,
+        523,
+        180
+      ],
+      "bbox_unit": "pt",
+      "type": "heading",
+      "level": 1,
+      "reading_order": 2,
+      "text": "1、投标函",
+      "confidence": 0.98,
+      "source": "ocr",
+      "verification_status": "unverified",
+      "style": {
+        "font_size_pt": 14,
+        "bold": true,
+        "alignment": "center"
+      }
+    },
+    {
+      "id": "b-001-004",
+      "page": 1,
+      "bbox": [
+        90,
+        190,
+        505,
+        300
+      ],
+      "bbox_unit": "pt",
+      "type": "paragraph",
+      "reading_order": 3,
+      "text": "本段落为示例正文，用于校验中间格式，不代表真实投标内容。",
+      "confidence": 0.97,
+      "source": "ocr",
+      "verification_status": "unverified",
+      "style": {
+        "font_family": "宋体",
+        "font_size_pt": 14,
+        "alignment": "left"
+      }
+    },
+    {
+      "id": "b-001-005",
+      "page": 1,
+      "bbox": [
+        90,
+        320,
+        505,
+        520
+      ],
+      "bbox_unit": "pt",
+      "type": "table",
+      "reading_order": 4,
+      "text": "",
+      "confidence": 0.95,
+      "source": "vlm",
+      "verification_status": "unverified",
+      "table": {
+        "n_rows": 3,
+        "n_cols": 3,
+        "header_row_count": 1,
+        "caption": "表 1-1 示例合并单元格表",
+        "cells": [
+          {
+            "row": 0,
+            "col": 0,
+            "colspan": 2,
+            "rowspan": 1,
+            "text": "合并表头",
+            "alignment": "center",
+            "bbox": [
+              90,
+              320,
+              350,
+              360
+            ]
+          },
+          {
+            "row": 0,
+            "col": 2,
+            "text": "列C",
+            "alignment": "center",
+            "bbox": [
+              350,
+              320,
+              505,
+              360
+            ]
+          },
+          {
+            "row": 1,
+            "col": 0,
+            "rowspan": 2,
+            "text": "纵向合并",
+            "alignment": "center",
+            "bbox": [
+              90,
+              360,
+              200,
+              520
+            ]
+          },
+          {
+            "row": 1,
+            "col": 1,
+            "text": "B2",
+            "bbox": [
+              200,
+              360,
+              350,
+              440
+            ]
+          },
+          {
+            "row": 1,
+            "col": 2,
+            "text": "C2",
+            "bbox": [
+              350,
+              360,
+              505,
+              440
+            ]
+          },
+          {
+            "row": 2,
+            "col": 1,
+            "text": "B3",
+            "bbox": [
+              200,
+              440,
+              350,
+              520
+            ]
+          },
+          {
+            "row": 2,
+            "col": 2,
+            "text": "C3",
+            "bbox": [
+              350,
+              440,
+              505,
+              520
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "b-001-006",
+      "page": 1,
+      "bbox": [
+        72,
+        800,
+        523,
+        820
+      ],
+      "bbox_unit": "pt",
+      "type": "footer",
+      "reading_order": 99,
+      "text": "— 1 —",
+      "confidence": 1.0,
+      "source": "rule",
+      "verification_status": "auto_passed"
+    },
+    {
+      "id": "b-002-001",
+      "page": 2,
+      "bbox": [
+        90,
+        80,
+        505,
+        110
+      ],
+      "bbox_unit": "pt",
+      "type": "heading",
+      "level": 1,
+      "reading_order": 5,
+      "text": "2、图件与印章（示例）",
+      "confidence": 0.98,
+      "source": "ocr",
+      "verification_status": "unverified"
+    },
+    {
+      "id": "b-002-002",
+      "page": 2,
+      "bbox": [
+        90,
+        120,
+        505,
+        380
+      ],
+      "bbox_unit": "pt",
+      "type": "image",
+      "reading_order": 6,
+      "text": "",
+      "confidence": 0.96,
+      "source": "vlm",
+      "verification_status": "unverified",
+      "image": {
+        "asset_id": "a-fig-001",
+        "caption": "图 2-1 示例柱状图（构造数据）",
+        "alt_text": "constructed bar chart"
+      }
+    },
+    {
+      "id": "b-002-003",
+      "page": 2,
+      "bbox": [
+        90,
+        385,
+        505,
+        410
+      ],
+      "bbox_unit": "pt",
+      "type": "figure_caption",
+      "reading_order": 7,
+      "text": "图 2-1 示例柱状图（构造数据）",
+      "confidence": 0.96,
+      "source": "ocr",
+      "verification_status": "unverified",
+      "style": {
+        "alignment": "center",
+        "font_size_pt": 14
+      }
+    },
+    {
+      "id": "b-002-004",
+      "page": 2,
+      "bbox": [
+        350,
+        520,
+        500,
+        670
+      ],
+      "bbox_unit": "pt",
+      "type": "seal",
+      "reading_order": 8,
+      "text": "",
+      "confidence": 0.9,
+      "source": "vlm",
+      "verification_status": "needs_review",
+      "needs_review": true,
+      "image": {
+        "asset_id": "a-seal-001",
+        "display_width_pt": 85
+      }
+    },
+    {
+      "id": "b-002-005",
+      "page": 2,
+      "bbox": [
+        72,
+        800,
+        523,
+        820
+      ],
+      "bbox_unit": "pt",
+      "type": "page_number",
+      "reading_order": 100,
+      "text": "— 2 —",
+      "confidence": 1.0,
+      "source": "rule",
+      "verification_status": "auto_passed"
+    }
+  ],
+  "assets": [
+    {
+      "id": "a-fig-001",
+      "type": "image",
+      "path": "assets/fig_demo.png",
+      "mime_type": "image/png",
+      "hash_sha256": "5356edcbe7f99596e946def1065ccb894a571c918f663b7059a18c145154e37e",
+      "width_px": 1500,
+      "height_px": 900,
+      "original_dpi": 300
+    },
+    {
+      "id": "a-seal-001",
+      "type": "seal",
+      "path": "assets/seal_demo.png",
+      "mime_type": "image/png",
+      "hash_sha256": "c5c0e8388f515670e36a26e8a80e6d91c1c005d00e169e8bde236bfa5183c7ab",
+      "width_px": 900,
+      "height_px": 900,
+      "original_dpi": 300
+    }
+  ],
+  "warnings": [],
+  "needs_review": true
+}

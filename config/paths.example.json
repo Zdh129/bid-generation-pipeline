@@ -1,0 +1,9 @@
+{
+  "$comment": "相对仓库根目录的示例路径。复制为 config/paths.json 后改为本机资料位置。本仓库不包含真实招标资料或对照成品。",
+  "package_root": "data/example-package",
+  "v8": "data/example-package/v8/example-v8-reference.docx",
+  "template_dir": "data/example-package/templates",
+  "tender_dir": "data/example-package/tender",
+  "draft_dir": "data/example-package/draft",
+  "attachments_dir": "data/example-package/attachments"
+}

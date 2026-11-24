@@ -1,0 +1,28 @@
+# 本地环境与生成物
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+
+# 本机覆盖配置（可能指向真实资料）
+config/paths.json
+config/project.json
+
+# 运行输出与本机资料（不要把真实招标原文、标书成品推送到公开仓库）
+output/
+work/
+converted_docx/
+data/
+*.docx
+*.pdf
+*.doc
+*.xls
+*.xlsx
+
+# 示例运行产物放在 examples/output，同样忽略
+examples/output/
+
+# 保留构造用的示例图片
+!schema/examples/assets/*.png
+!examples/assets/*.png

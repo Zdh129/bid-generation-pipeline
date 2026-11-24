@@ -1,0 +1,184 @@
+# V8 参考成品与模板排版统计
+
+说明：V8 为阳性对照。统计过程对证件号等做了脱敏。本报告不摘录正文，标题仅保留结构文本（已脱敏）。
+
+## V8 概要
+- 节（section）数：8；首页不同页眉设置的节：0
+- 纸张：[{'w_mm': 210.03, 'h_mm': 297.04, 'orient': None, 'count': 2}, {'w_mm': 297.04, 'h_mm': 210.03, 'orient': 'landscape', 'count': 1}, {'w_mm': 210.01, 'h_mm': 297.0, 'orient': None, 'count': 3}, {'w_mm': 297.0, 'h_mm': 210.01, 'orient': 'landscape', 'count': 2}]
+- 页码起始/格式（各节 pgNumType）：[{'start': '1', 'fmt': None, 'chapStyle': None}, None, None, None, None, None, None, None]
+- 页眉部件：0；页脚部件：20（含 PAGE 域 18）
+- 页脚字体：{'Times New Roman': 34, 'PingFang SC': 13}；字号：{9.0: 47}
+- 边距种类：
+  - {'top': 2.524, 'bottom': 2.584, 'left': 2.79, 'right': 2.729, 'header': 0.0, 'footer': 1.101, 'gutter': 0.0}
+  - {'top': 2.508, 'bottom': 2.584, 'left': 1.935, 'right': 1.688, 'header': 0.0, 'footer': 1.101, 'gutter': 0.0}
+  - {'top': 1.785, 'bottom': 2.582, 'left': 2.341, 'right': 1.94, 'header': 0.0, 'footer': 1.101, 'gutter': 0.0}
+  - {'top': 2.524, 'bottom': 2.395, 'left': 2.491, 'right': 2.491, 'header': 0.0, 'footer': 1.101, 'gutter': 0.0}
+  - {'top': 2.0, 'bottom': 2.0, 'left': 2.0, 'right': 2.0, 'header': 1.0, 'footer': 1.101, 'gutter': 0.0}
+  - {'top': 2.524, 'bottom': 2.395, 'left': 1.933, 'right': 1.725, 'header': 0.0, 'footer': 1.101, 'gutter': 0.0}
+  - {'top': 1.785, 'bottom': 2.395, 'left': 2.341, 'right': 2.491, 'header': 0.0, 'footer': 1.101, 'gutter': 0.0}
+  - {'top': 2.524, 'bottom': 2.395, 'left': 1.939, 'right': 1.725, 'header': 0.0, 'footer': 1.101, 'gutter': 0.0}
+- 正文字体（按字符）：{'PingFang SC': 7986}
+- 正文字号（按字符）：{'21.5': 6, '12.0': 93, '14.0': 7887}
+- 行距：{"('exact', 20.0)": 281, "('multiple', 1.0)": 141, "('exact', 17.0)": 34, "('exact', 18.0)": 17, "('multiple', 0.879)": 1}
+- 首行缩进：{'0.0': 474}
+- 对齐：{'center': 185, 'left': 187, 'both': 9, 'right': 2}
+- 样式使用（前 20）：{'Bid Body': 270, 'Bid Caption': 135, 'TOC 3': 14, 'heading 3': 14, 'TOC 2': 13, 'heading 2': 13, 'TOC 1': 7, 'heading 1': 7, 'Title': 1}
+- 识别到的标题/结构行数：70
+- 目录：{'toc_field': True, 'toc_style_paras': 35}
+- 表格：6；其它：边框/表头/合并等见 JSON
+  {'table_count': 6, 'border_styles': {'top:single:2': 6, 'left:single:2': 6, 'bottom:single:2': 6, 'right:single:2': 6, 'insideH:single:2': 6, 'insideV:single:2': 6}, 'header_repeat': 4, 'cant_split_tables': 0, 'merged': 4208, 'cell_fonts': {'PingFang SC': 2318}, 'cell_sizes': {'14.0': 2318}, 'cell_align': {'center': 4771, 'left': 1036, 'right': 106}}
+- 图片：{'media_files': 130, 'placements': 136, 'dpi_stats': {'n': 136, 'min': 65.1, 'median': 242.8, 'max': 341.5, 'lt300': 133, 'lt200': 40, 'ge300': 3}, 'width_cm_hist': {20.0: 1, 16.0: 107, 11.0: 4, 14.0: 18, 12.0: 3, 17.0: 1, 6.0: 1, 10.0: 1}, 'pos_hist': {'inline/inherit': 136}}
+
+## V8 标题结构（脱敏）
+- [inferred|TOC 2|L2] 3.1 投标人基本情况表94
+- [inferred|TOC 2|L2] 3.2 投标人资格相关资料96
+- [inferred|TOC 2|L2] 3.3 投标人资格承诺函103
+- [inferred|TOC 2|L2] 3.4 商务要求及技术★条款响应承诺书106
+- [inferred|TOC 2|L2] 5.2 质保期承诺146
+- [inferred|TOC 2|L2] 5.3 商务响应表147
+- [inferred|TOC 2|L2] 6.1 技术参数响应及证明材料149
+- [inferred|TOC 2|L2] 6.2 实施方案242
+- [inferred|TOC 3|L3] 6.2.1 供货范围与项目组织242
+- [inferred|TOC 3|L3] 6.2.2 供货进度计划与控制242
+- [inferred|TOC 3|L3] 6.2.3 全过程质量与成品保护242
+- [inferred|TOC 3|L3] 6.2.4 分类安装与调试243
+- [inferred|TOC 3|L3] 6.2.5 计量试运行与验收243
+- [inferred|TOC 3|L3] 6.2.6 厂家协同与实施风险处置244
+- [inferred|TOC 2|L2] 6.3 售后服务方案244
+- [inferred|TOC 3|L3] 6.3.1 服务组织与故障受理244
+- [inferred|TOC 3|L3] 6.3.2 维修响应与现场服务244
+- [inferred|TOC 3|L3] 6.3.3 回访维护与备品备件245
+- [inferred|TOC 3|L3] 6.3.4 质保期满后服务与资料交接245
+- [inferred|TOC 2|L2] 6.4 培训方案245
+- [inferred|TOC 3|L3] 6.4.1 培训目标与组织245
+- [inferred|TOC 3|L3] 6.4.2 培训次数与时间安排245
+- [inferred|TOC 3|L3] 6.4.3 分类操作与维护重点246
+- [inferred|TOC 3|L3] 6.4.4 考核与培训资料交接246
+- [heading_1|heading 1|L1] 1、投标函
+- [heading_2|heading 2|L2] 投标函附录-分项报价表
+- [inferred|Bid Body|L3] （1）须提供厂家参数确认函或检测报告或技术白皮书或产品说明书作为证明材料，否则该项视为不满足。
+- [inferred|Bid Body|L3] （2）若参数中要求提供其他证明材料的，投标人须按对应要求在投标文件中提供，否则该项视为不满足。
+- [heading_1|heading 1|L1] 2、投标保证金
+- [heading_1|heading 1|L1] 3、投标人基本情况
+- [heading_2|heading 2|L2] 3.1 投标人基本情况表
+- [heading_2|heading 2|L2] 3.2 投标人资格相关资料
+- [heading_2|heading 2|L2] 3.3 投标人资格承诺函
+- [inferred|Bid Body|L3] （1）不以任何理由或任何名义宴请相关方或向相关方赠送礼品、礼金及各种有价证券等；
+- [inferred|Bid Body|L3] （2）不以洽谈业务、签订合同等为借口，邀请相关方外出旅游和进入营业性娱乐场所；
+- [inferred|Bid Body|L3] （3）不为相关方购置或者提供通讯工具、交通工具、家电、高档办公用品等物品；
+- [inferred|Bid Body|L3] （4）不以其他任何形式向相关方行贿。
+- [inferred|Bid Body|L3] （2） 中标人供货时应以中文形式附有主要图样、合格证明、设备使用维护保养说明等相关技术资料及文件。
+- [inferred|Bid Body|L3] （4） 包装方式的确定及包装费用均由中标人负责； 由于不适当的包装而造成货物在运输过程中有任何损坏、丢失由投标人负责。
+- [inferred|Bid Body|L3] （5） 中标后须按照招标人要求聘请具备相应资质的第三方，对须要校准或检定的计量器具进行检定校准，并提供相应证书。
+- [inferred|Bid Body|L3] （6）若投标人投标时提供有进口设备，在货物到货时须提供安装使用、维修所需的全部技术资料，验收时须提供货物的正品验证渠道或证明。
+- [heading_2|heading 2|L2] 3.4 商务要求及技术★条款响应承诺书
+- [heading_1|heading 1|L1] 4、投标人代表身份证明
+- [heading_2|heading 2|L2] 法定代表人身份证明书
+- [heading_1|heading 1|L1] 5、商务文件
+- [heading_2|heading 2|L2] 附表1：企业业绩
+- [heading_2|heading 2|L2] 5.2 质保期承诺
+- [heading_2|heading 2|L2] 5.3 商务响应表
+- [heading_1|heading 1|L1] 6、技术文件
+- [heading_2|heading 2|L2] 6.1 技术参数响应及证明材料
+- [heading_2|heading 2|L2] 6.2 实施方案
+- [heading_3|heading 3|L3] 6.2.1 供货范围与项目组织
+- [heading_3|heading 3|L3] 6.2.2 供货进度计划与控制
+- [heading_3|heading 3|L3] 6.2.3 全过程质量与成品保护
+- [heading_3|heading 3|L3] 6.2.4 分类安装与调试
+- [heading_3|heading 3|L3] 6.2.5 计量试运行与验收
+- [heading_3|heading 3|L3] 6.2.6 厂家协同与实施风险处置
+- [heading_2|heading 2|L2] 6.3 售后服务方案
+- [heading_3|heading 3|L3] 6.3.1 服务组织与故障受理
+- [heading_3|heading 3|L3] 6.3.2 维修响应与现场服务
+- [heading_3|heading 3|L3] 6.3.3 回访维护与备品备件
+- [heading_3|heading 3|L3] 6.3.4 质保期满后服务与资料交接
+- [heading_2|heading 2|L2] 6.4 培训方案
+- [heading_3|heading 3|L3] 6.4.1 培训目标与组织
+- [heading_3|heading 3|L3] 6.4.2 培训次数与时间安排
+- [heading_3|heading 3|L3] 6.4.3 分类操作与维护重点
+- [heading_3|heading 3|L3] 6.4.4 考核与培训资料交接
+- [heading_1|heading 1|L1] 7、投标人需提交的其它材料
+- [inferred|Bid Body|L3] （1）招标文件要求的其他材料。
+- [inferred|Bid Body|L3] （2）投标人认为有必要的其他材料。
+
+## 模板
+### 2.1 包2模版_WPS转出.docx  （46963 字节，节 17，标题行 31，表 4）
+- 边距：[{'top': 2.524, 'bottom': 2.584, 'left': 2.79, 'right': 2.729, 'header': 0.0, 'footer': 2.298, 'gutter': 0.0}, {'top': 2.508, 'bottom': 2.584, 'left': 1.935, 'right': 1.688, 'header': 0.0, 'footer': 2.298, 'gutter': 0.0}, {'top': 1.785, 'bottom': 2.582, 'left': 2.341, 'right': 1.94, 'header': 0.0, 'footer': 2.297, 'gutter': 0.0}, {'top': 1.785, 'bottom': 2.582, 'left': 2.558, 'right': 2.538, 'header': 0.0, 'footer': 2.297, 'gutter': 0.0}, {'top': 2.508, 'bottom': 2.584, 'left': 3.15, 'right': 3.15, 'header': 0.0, 'footer': 2.298, 'gutter': 0.0}, {'top': 2.524, 'bottom': 2.395, 'left': 2.491, 'right': 2.491, 'header': 0.0, 'footer': 2.108, 'gutter': 0.0}, {'top': 2.524, 'bottom': 2.395, 'left': 2.491, 'right': 1.903, 'header': 0.0, 'footer': 2.108, 'gutter': 0.0}, {'top': 2.524, 'bottom': 2.39, 'left': 1.94, 'right': 1.859, 'header': 0.0, 'footer': 2.108, 'gutter': 0.0}, {'top': 2.524, 'bottom': 2.395, 'left': 1.933, 'right': 1.725, 'header': 0.0, 'footer': 2.108, 'gutter': 0.0}, {'top': 2.524, 'bottom': 2.39, 'left': 1.931, 'right': 1.737, 'header': 0.0, 'footer': 2.108, 'gutter': 0.0}, {'top': 2.524, 'bottom': 2.395, 'left': 1.937, 'right': 1.76, 'header': 0.0, 'footer': 2.108, 'gutter': 0.0}, {'top': 2.524, 'bottom': 2.395, 'left': 1.935, 'right': 2.055, 'header': 0.0, 'footer': 2.108, 'gutter': 0.0}, {'top': 2.524, 'bottom': 2.395, 'left': 2.351, 'right': 1.905, 'header': 0.0, 'footer': 2.108, 'gutter': 0.0}, {'top': 2.524, 'bottom': 2.395, 'left': 1.935, 'right': 1.725, 'header': 0.0, 'footer': 2.108, 'gutter': 0.0}, {'top': 1.785, 'bottom': 2.395, 'left': 2.341, 'right': 2.491, 'header': 0.0, 'footer': 2.108, 'gutter': 0.0}, {'top': 2.524, 'bottom': 2.395, 'left': 1.939, 'right': 1.725, 'header': 0.0, 'footer': 2.108, 'gutter': 0.0}, {'top': 2.524, 'bottom': 2.395, 'left': 1.939, 'right': 3.149, 'header': 0.0, 'footer': 2.108, 'gutter': 0.0}]
+- 正文字体/字号：{'PingFang SC': 3209} / {'21.5': 5, '12.0': 42, '14.0': 3162}
+- 行距：{"('multiple', 0.808)": 58, "('multiple', 0.804)": 14, "('multiple', 0.779)": 14, "('multiple', 1.225)": 10, "('multiple', 1.221)": 9, "('multiple', 1.067)": 5, "('multiple', 1.071)": 4, "('multiple', 0.775)": 3}；缩进：{'28.0': 1, '28.55': 3, '27.15': 1, '27.5': 1, '28.6': 3, '28.2': 2, '27.1': 1, '27.45': 3, '27.7': 2, '27.65': 1, '27.35': 1, '28.45': 1, '27.85': 1, '27.75': 1, '0.05': 1, '27.9': 1, '27.05': 1, '28.05': 1, '152.45': 1}
+- 页脚：17（PAGE 0）；页眉：0
+- 样式：{'Body Text': 125}
+- 目录：{'toc_field': False, 'toc_style_paras': 0}
+- 结构行：
+  - [heading_2|Body Text|L2] 投标文件
+  - [inferred|Body Text|L3] （1）须提供厂家参数确认函或检测报告或技术白皮书或产品说明书作为证明材料 ，否则该项视为不满足。
+  - [inferred|Body Text|L3] （2）若参数中要求提供其他证明材料的 ，投标人须按对应要求在投标文件中提供 ，否则该项视为不满足。
+  - [heading_2|Body Text|L2] 3、 投标人基本情况
+  - [heading_3|Body Text|L3] 3.1 投标人基本情况表
+  - [heading_3|Body Text|L3] 3.2 投标人资格相关资料
+  - [heading_2|Body Text|L2] 1.在中华人民共和国境内依法登记注册的独立法人或其他组织，具有独立承
+  - [heading_3|Body Text|L3] 3.3 投标人资格承诺函（仅供参考）
+  - [heading_2|Body Text|L2] 1.我单位具有履行合同所必备的能力。
+  - [heading_2|Body Text|L2] 13.投标人在人员、 设备、 资金等方面具有相应的服务能力。
+  - [heading_2|Body Text|L2] 17.完全满足招标文件第三章招标需求第一节商务要求及第二节技术要求的
+  - [inferred|Body Text|L3] （1）不以任何理由或任何名义宴请相关方或向相关方赠送礼品、 礼金及各种有价证券等；
+  - [inferred|Body Text|L3] （2）不以洽谈业务、 签订合同等为借 口 ，邀请相关方外出旅游和进入营业性娱乐场所；
+  - [inferred|Body Text|L3] （3）不为相关方购置或者提供通讯工具、 交通工具、 家电、 高档办公用品等物品；
+  - [heading_3|Body Text|L3] （4）不以其他任何形式向相关方行贿。
+  - [heading_3|Body Text|L3] 以上所称相关方包括但不限于：招标人、代理机构及其工作人员，评审专家，
+  - [heading_3|Body Text|L3] 19.我单位完全响应下列条款：
+  - [heading_3|Body Text|L3] （1）投标人应保证所供货物是全新、 未使用过的合格产品 ，质量达到国家
+  - [heading_3|Body Text|L3] （2） 中标人供货时应以中文形式附有主要图样、 合格证明、 设备使用维护保养说明等相关技术资料及文件。
+  - [heading_3|Body Text|L3] （3）若投标人自愿延长质保期的 ，按投标人延长后的质保期执行并相应延
+  - [heading_3|Body Text|L3] （4） 包装方式的确定及包装费用均由中标人负责； 由于不适当的包装而造
+  - [heading_3|Body Text|L3] （5） 中标后须按照招标人要求聘请具备相应资质的第三方 ，对须要校准或
+  - [heading_3|Body Text|L3] （6）若投标人投标时提供有进口设备 ，在货物到货时须提供安装使用、 维
+  - [heading_3|Body Text|L3] 如上述承诺不实 ，我单位愿承担由此产生的全部责任。
+  - [heading_2|Body Text|L2] 4、 投标人代表身份证明
+  - [heading_3|Body Text|L3] 法定代表人身份证明书
+  - [heading_2|Body Text|L2] 5、 商务文件
+  - [heading_2|Body Text|L2] 6、 技术文件
+  - [heading_2|Body Text|L2] 7、 投标人需提交的其它材料
+  - [inferred|Body Text|L3] （1）招标文件要求的其他材料。
+  - [inferred|Body Text|L3] （2）投标人认为有必要的其他材料。
+
+### 2.2 AI精修提示词.docx  （11836 字节，节 1，标题行 0，表 0）
+- 边距：[{'top': 2.54, 'bottom': 2.54, 'left': 3.175, 'right': 3.175, 'header': 1.501, 'footer': 1.75, 'gutter': 0.0}]
+- 正文字体/字号：{'宋体': 280, 'Helvetica': 57} / {'12.0': 337}
+- 行距：{"('atLeast', 1.65)": 1}；缩进：{'0.0': 1}
+- 页脚：0（PAGE 0）；页眉：0
+- 样式：{'(none)': 3}
+- 目录：{'toc_field': False, 'toc_style_paras': 0}
+- 结构行：
+
+### 2.3 成品对照_包2模版_AI精修.docx  （49644 字节，节 6，标题行 22，表 3）
+- 边距：[{'top': 2.499, 'bottom': 2.2, 'left': 2.499, 'right': 2.499, 'header': 1.0, 'footer': 1.0, 'gutter': 0.0}, {'top': 1.799, 'bottom': 1.799, 'left': 2.0, 'right': 2.0, 'header': 1.0, 'footer': 1.0, 'gutter': 0.0}]
+- 正文字体/字号：{'宋体': 3613, '黑体': 39} / {'18.0': 6, '14.0': 74, '12.0': 3019, '10.5': 553}
+- 行距：{}；缩进：{}
+- 页脚：6（PAGE 5）；页眉：0
+- 样式：{'投标条款': 51, '投标填空行': 14, '投标表下注': 13, '投标签章': 10, '投标正文': 8, 'heading 1': 7, '投标封面信息': 4, '投标表题': 4, 'heading 2': 3, '投标附件提示': 2, 'Title': 1, '投标封面包号': 1}
+- 目录：{'toc_field': False, 'toc_style_paras': 0}
+- 结构行：
+  - [heading_1|heading 1|L1] 1、投标函
+  - [inferred|投标表下注|L3] （1）须提供厂家参数确认函或检测报告或技术白皮书或产品说明书作为证明材料，否则该项视为不满足。
+  - [inferred|投标表下注|L3] （2）若参数中要求提供其他证明材料的，投标人须按对应要求在投标文件中提供，否则该项视为不满足。
+  - [heading_1|heading 1|L1] 2、投标保证金
+  - [heading_1|heading 1|L1] 3、投标人基本情况
+  - [heading_2|heading 2|L2] 3.1投标人基本情况表
+  - [heading_2|heading 2|L2] 3.2投标人资格相关资料
+  - [heading_2|heading 2|L2] 3.3投标人资格承诺函（仅供参考）
+  - [inferred|投标条款|L3] （1）不以任何理由或任何名义宴请相关方或向相关方赠送礼品、礼金及各种有价证券等；
+  - [inferred|投标条款|L3] （2）不以洽谈业务、签订合同等为借口，邀请相关方外出旅游和进入营业性娱乐场所；
+  - [inferred|投标条款|L3] （3）不为相关方购置或者提供通讯工具、交通工具、家电、高档办公用品等物品；
+  - [inferred|投标条款|L3] （4）不以其他任何形式向相关方行贿。
+  - [inferred|投标条款|L3] （2）中标人供货时应以中文形式附有主要图样、合格证明、设备使用维护保养说明等相关技术资料及文件。
+  - [inferred|投标条款|L3] （4）包装方式的确定及包装费用均由中标人负责；由于不适当的包装而造成货物在运输过程中有任何损坏、丢失由投标人负责。
+  - [inferred|投标条款|L3] （5）中标后须按照招标人要求聘请具备相应资质的第三方，对须要校准或检定的计量器具进行检定校准，并提供相应证书。
+  - [inferred|投标条款|L3] （6）若投标人投标时提供有进口设备，在货物到货时须提供安装使用、维修所需的全部技术资料，验收时须提供货物的正品验证渠道或证明。
+  - [heading_1|heading 1|L1] 4、投标人代表身份证明
+  - [heading_1|heading 1|L1] 5、商务文件
+  - [heading_1|heading 1|L1] 6、技术文件
+  - [heading_1|heading 1|L1] 7、投标人需提交的其它材料
+  - [inferred|投标条款|L3] （1）招标文件要求的其他材料。
+  - [inferred|投标条款|L3] （2）投标人认为有必要的其他材料。
+

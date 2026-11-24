@@ -1,0 +1,12 @@
+{
+  "$comment": "虚构的示例项目信息，供公开测试。复制为 config/project.json 后填写本机项目（勿把真实招标文件提交到公开仓库）。",
+  "project_name": "示例采购项目",
+  "project_code": "EXAM-ZB-20260001",
+  "package_no": "1",
+  "bidder_name": "示例投标人有限公司",
+  "addressee": "示例招标人有限公司",
+  "agent_name": "示例招标代理有限公司",
+  "package_ceiling": 100000.0,
+  "delivery": "合同签订之后，接招标人通知之日起 30 日历日内完成供货，并通过验收",
+  "warranty": "验收合格之日起 1 年"
+}
